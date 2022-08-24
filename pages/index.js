@@ -26,14 +26,17 @@ export default function Home() {
   }
   return (
     <div className={styles.background + " " + (dark && styles.dark)}>
+
       <nav className={styles.navbar}>
         <div onClick={() => setDark(!dark)}>
           <h3>{profile.name}</h3>
           <img src={profile.image}/>
         </div>
       </nav>
-      { people.map(person => 
+
+      { people.map( (person, index) => 
         <Card 
+          key={index}
           name={person.name} 
           description={person.description} 
           image={person.image}
